@@ -1,0 +1,147 @@
+:root {
+    --color-body-light: #242934;
+    --color-body-dark: #0d0f13;
+    --color-ppal: #32333f;
+    --color-sec: #5c646f;
+    --color-details: #00919d;
+    --color-text: #f7fefd;
+    --color-efect: #00f9eb;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: var(--color-body-light);
+    color: var(--color-text);
+}
+.container {
+    width: 500px;
+    margin: 50px auto;
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px  var(--color-body-dark);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container::before {
+    content: "";
+    width: 300%;
+    height: 300%;
+    background: conic-gradient(
+        at 50% 50%,
+        var(--color-details) 15%, 
+        var(--color-body-dark) 25%,
+        var(--color-ppal) 50%, 
+        var(--color-details) 65%, 
+        var(--color-body-dark) 75%, 
+        var(--color-ppal) 100%
+        );
+    animation: animate 5s infinite ease;
+    position: absolute;
+}
+@keyframes animate {
+    to{
+        transform: rotate(0deg);
+    }
+    from{
+        transform: rotate(360deg);
+    }
+}
+.card {
+    width: 485px;
+    height: 100%;
+    background-color: var(--color-ppal);
+    margin: 10px auto;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    place-items: center center;
+    border-radius: 25px;
+    position: relative;
+    z-index: 1;
+}
+.instructions, .result {
+    width: 60%;
+    min-width: 300px;
+    padding: 10px 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--color-sec);
+    opacity: 1;
+}
+.div-line {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-details);
+}
+#number {
+    width: 40%;
+    min-width: 200px;
+    padding: 10px;
+    background-color: var(--color-sec);
+    color: var(--color-text);
+    border: none;
+    border-radius: 5px;
+}
+#number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+}
+#number:focus {
+    outline: none;
+    box-shadow: 1px 1px 2px var(--color-efect);
+}
+/* Contenedor para centrar el botón */
+.container-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Estilo del botón */
+.glass-button {
+    position: relative;
+    padding: 10px 25px;
+    font-size: 16px;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    backdrop-filter: blur(15px);
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+/* Efecto en hover */
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+/* Animación de brillo */
+.glass-button::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(-45deg);
+    transition: 0.5s;
+}
+.glass-button:hover::before {
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+}
+.hidde {
+    display: none;
+}

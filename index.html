@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Números Romanos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="border"></div>    
+        <div class="card">
+            <h1>Conversor de Números Romanos</h1>
+            <div class="instructions" id="instructions">
+                <div class="show" id="show">
+                    <span>Instrucciones</span>
+                </div>
+                <div class="instructions-text hidde" id="instructions-text">
+                    <p>Ingrese un número entre 1 y 3999 inclusive y haga click en convertir.</p>
+                </div>
+            </div>
+            <input type="number" id="number">
+            <div class="container-btn">
+                <button type="button" id="convert-btn" class="glass-button">Convertir</button>
+            </div>
+            <div class="result hidde" id="result">
+                <p id="output">Resultado</p>
+                <div class="container-btn">
+                    <button type="button" id="clear-btn" class="glass-button">Borrar</button>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
